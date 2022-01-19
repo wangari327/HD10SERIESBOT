@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
+                InlineKeyboardButton('🤖 Updates', url='https://t.me/Prosearchx')
             ],
             [
                 InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -42,13 +42,9 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('🤖My Updates Channel', url='https://t.me/Prosearchx')],[
+            InlineKeyboardButton('🤖 Movie Search Bot', url='https://t.me/Prosearchbot')
+           
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -67,7 +63,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "🤖 Join MY BOT Updates Channel", url=invite_link.invite_link
                 )
             ]
         ]
@@ -85,13 +81,9 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('🤖BOT Updates Channel', url='https://t.me/Prosearchx')],[
+            InlineKeyboardButton('🤖Movie Search Bot', url='https://t.me/Prosearchbot')
+           
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -241,7 +233,7 @@ async def start(client, message):
         )
                     
 
-@Client.on_message(filters.command('channel') & filters.user(ADMINS))
+@Client.on_message(filters.command('channelproo') & filters.user(ADMINS))
 async def channel_info(bot, message):
            
     """Send basic information of channel"""
@@ -272,7 +264,7 @@ async def channel_info(bot, message):
         os.remove(file)
 
 
-@Client.on_message(filters.command('logs') & filters.user(ADMINS))
+@Client.on_message(filters.command('logsproo') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
     try:
@@ -280,7 +272,7 @@ async def log_file(bot, message):
     except Exception as e:
         await message.reply(str(e))
 
-@Client.on_message(filters.command('delete') & filters.user(ADMINS))
+@Client.on_message(filters.command('deleteproo') & filters.user(ADMINS))
 async def delete(bot, message):
     """Delete file from database"""
     reply = message.reply_to_message
@@ -328,7 +320,7 @@ async def delete(bot, message):
                 await msg.edit('File not found in database')
 
 
-@Client.on_message(filters.command('deleteall') & filters.user(ADMINS))
+@Client.on_message(filters.command('deleteallproo') & filters.user(ADMINS))
 async def delete_all_index(bot, message):
     await message.reply_text(
         'This will delete all indexed files.\nDo you want to continue??',
