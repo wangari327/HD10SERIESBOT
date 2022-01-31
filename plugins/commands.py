@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/Prosearchx')
+                InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
             ],
             [
                 InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -63,7 +63,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join MY BOT Updates Channel", url=invite_link.invite_link
+                    "🤖 Joinmy BOT Updates Channel", url=invite_link.invite_link
                 )
             ]
         ]
@@ -71,7 +71,7 @@ async def start(client, message):
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
             pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{message.command[1]}")])
+            btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
         await client.send_message(
             chat_id=message.from_user.id,
             text="**Please Join My Updates Channel to use this Bot!**",
@@ -166,6 +166,10 @@ async def start(client, message):
                     except Exception as e:
                         logger.exception(e)
                         f_caption = getattr(msg, 'caption', '')
+                else:
+                    media = getattr(msg, msg.media)
+                    file_name = getattr(media, 'file_name', '')
+                    f_caption = getattr(msg, 'caption', file_name)
                 try:
                     await msg.copy(message.chat.id, caption=f_caption, protect_content=True if protect == "/pbatch" else False)
                 except FloodWait as e:
@@ -233,7 +237,7 @@ async def start(client, message):
         )
                     
 
-@Client.on_message(filters.command('channelproo') & filters.user(ADMINS))
+@Client.on_message(filters.command('channelpro') & filters.user(ADMINS))
 async def channel_info(bot, message):
            
     """Send basic information of channel"""
@@ -264,7 +268,7 @@ async def channel_info(bot, message):
         os.remove(file)
 
 
-@Client.on_message(filters.command('logsproo') & filters.user(ADMINS))
+@Client.on_message(filters.command('logspro') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
     try:
@@ -272,7 +276,7 @@ async def log_file(bot, message):
     except Exception as e:
         await message.reply(str(e))
 
-@Client.on_message(filters.command('deleteproo') & filters.user(ADMINS))
+@Client.on_message(filters.command('delete') & filters.user(ADMINS))
 async def delete(bot, message):
     """Delete file from database"""
     reply = message.reply_to_message
@@ -320,7 +324,7 @@ async def delete(bot, message):
                 await msg.edit('File not found in database')
 
 
-@Client.on_message(filters.command('deleteallproo') & filters.user(ADMINS))
+@Client.on_message(filters.command('deleteallpro') & filters.user(ADMINS))
 async def delete_all_index(bot, message):
     await message.reply_text(
         'This will delete all indexed files.\nDo you want to continue??',
@@ -345,11 +349,11 @@ async def delete_all_index(bot, message):
 @Client.on_callback_query(filters.regex(r'^autofilter_delete'))
 async def delete_all_index_confirm(bot, message):
     await Media.collection.drop()
-    await message.answer()
+    await message.answer('Piracy Is Crime')
     await message.message.edit('Succesfully Deleted All The Indexed Files.')
 
 
-@Client.on_message(filters.command('settings'))
+@Client.on_message(filters.command('settingspro'))
 async def settings(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
