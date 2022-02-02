@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
+                InlineKeyboardButton('🤖 Updates', url='https://t.me/Movie_Collections_Bot')
             ],
             [
                 InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -42,8 +42,8 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('🤖My Updates Channel', url='https://t.me/Prosearchx')],[
-            InlineKeyboardButton('🤖 Movie Search Bot', url='https://t.me/Prosearchbot')
+            InlineKeyboardButton('🎥🍿 My Updates Channel', url='https://t.me/Movie_Collections_Bot')],[
+            InlineKeyboardButton('🔞 Adult Search Bot', url='https://t.me/AdultEmpire_xxx')
            
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -63,7 +63,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Joinmy BOT Updates Channel", url=invite_link.invite_link
+                    "🎥🍿 Join my Updates Channel", url=invite_link.invite_link
                 )
             ]
         ]
@@ -81,8 +81,8 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('🤖BOT Updates Channel', url='https://t.me/Prosearchx')],[
-            InlineKeyboardButton('🤖Movie Search Bot', url='https://t.me/Prosearchbot')
+            InlineKeyboardButton('🎥🍿 Updates Channel', url='https://t.me/Movie_Collections_Bot')],[
+            InlineKeyboardButton('🔞Adult Search Bot', url='https://t.me/AdultEmpire_xxx')
            
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
