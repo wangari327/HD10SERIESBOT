@@ -404,8 +404,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('🤖Updates Channel', url='https://t.me/Prosearchx')],[
-            InlineKeyboardButton('🤖 Movie Search Bots', url='https://t.me/Prosearchbots')
+            InlineKeyboardButton('🎥🍿 Updates Channel', url='https://t.me/Movie_Collections_Bot')],[
+            InlineKeyboardButton('🤖 Other Bots', url='https://t.me/Movie_Collections_Bot/1220')
            
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -433,7 +433,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria'),
+            InlineKeyboardButton('🤖 Updates', url='https://t.me/Movie_Collections_Bot'),
             InlineKeyboardButton('♥️ Source', callback_data='source')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
@@ -701,7 +701,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"Sweetie Here is what i found for your query {search}"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -757,7 +757,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find any Serieses related to this. Check your spelling")
+        k = await msg.reply("I couldn't find any Series related to this. Check your spelling")
         await asyncio.sleep(8)
         await k.delete()
         return
