@@ -3,7 +3,7 @@ class script(object):
 
 SWEETIE 𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 YOU SERIES, JUST SEND 𝙼𝙴 ONLY THE NAME OF THE SERIES AND ALLOW ME DO MY MAGIC!!! 
 
-✯ FOR MORE HELP ON HOW TO USE ME - https://t.me/Movie_Collections_Bot/1410?single 😍"""
+✯ FOR MORE HELP ON HOW TO USE ME - https://t.me/Movie_Collections_Bot/1589 😍"""
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
     ABOUT_TXT = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: {}
